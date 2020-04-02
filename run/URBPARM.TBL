@@ -1,0 +1,444 @@
+## THIS IS NOT SET UP FOR BEP
+## SETUP FOR NAIP URBAN LAND COVER
+
+#####################################################
+#               NOT SET UP FOR BEP                  #
+#####################################################
+
+# The parameters in this table may vary greatly from city to city.
+# The default values are probably not appropriate for any given city.
+# Users should adapt these values based on the city they are working
+# with.
+
+# Urban Parameters depending on Urban type
+# USGS
+
+Number of urban categories: 3
+
+#
+#  Where there are multiple columns of values, the values refer, in
+#  order, to: 1) Commercial, 2) High intensity residential, and 3) Low
+#  intensity residential:  I.e.:
+#
+#  Index:     1           2              3
+#  Type:  Commercial, Hi-dens Res, Low-dens Res
+#
+
+#
+# ZR:  Roof level (building height)  [ m ]
+#      (sf_urban_physics=1)
+
+ZR: 18.0,  6.0,  6.0
+#ZR: 20.0,  4.0,  4.0
+
+#
+# SIGMA_ZED:  Standard Deviation of roof height  [ m ]
+#      (sf_urban_physics=1)
+
+SIGMA_ZED: 9.0,  1.0,  1.0
+
+#
+# ROOF_WIDTH:  Roof (i.e., building) width  [ m ]
+#      (sf_urban_physics=1)
+
+ROOF_WIDTH: 12.0, 10.0, 10.0
+#ROOF_WIDTH: 15.3, 9.3, 6.0
+#
+# ROAD_WIDTH:  road width  [ m ]
+#      (sf_urban_physics=1)
+#
+
+ROAD_WIDTH: 10.0, 10.0, 20.0
+#ROAD_WIDTH: 10.0,10.0,28.6
+#
+# AH:  Anthropogenic heat [ W m{-2} ]
+#      (sf_urban_physics=1)
+#
+
+#AH:  90.0, 50.0, 20.0
+AH:  70.0, 40.0, 10.0
+# The above is roughly estimated from Sailor et al. 
+#
+# FRC_URB:  Fraction of the urban landscape which does not have natural
+#           vegetation. [ Fraction ]
+#      (sf_urban_physics=1,2,3)
+#
+
+# default values
+#FRC_URB: 0.83, 0.82, 0.55
+
+# NAIP data average values
+FRC_URB: 0.80, 0.51, 0.29
+
+#
+# CAPR:  Heat capacity of roof  [ J m{-3} K{-1} ]
+#      (sf_urban_physics=1,2,3)
+#
+
+CAPR: 1.8E6, 1.8E6, 1.8E6,
+
+#
+# CAPB:  Heat capacity of building wall [ J m{-3} K{-1} ]
+#      (sf_urban_physics=1,2,3)
+#
+
+#CAPB: 2.5E6, 2.1E6, 2.1E6,
+CAPB: 2.0E6, 2.0E6, 2.0E6,
+#CAPB: 1.7E6, 1.7E6, 1.7E6,
+
+#
+# CAPG:  Heat capacity of ground (road) [ J m{-3} K{-1} ]
+#      (sf_urban_physics=1,2,3)
+#
+
+CAPG:  1.7E6, 1.7E6, 1.7E6,
+#CAPG:  2.1E6, 2.1E6, 2.1E6,
+
+#
+# AKSR:  Thermal conductivity of roof [ J m{-1} s{-1} K{-1} ]
+#      (sf_urban_physics=1,2,3)
+#
+
+AKSR:  1.3, 1.3, 1.3,
+
+#
+# AKSB:  Thermal conductivity of building wall [ J m{-1} s{-1} K{-1} ]
+#      (sf_urban_physics=1,2,3)
+#
+
+AKSB:  1.2, 1.2, 1.2,
+
+#
+# AKSG:  Thermal conductivity of ground (road) [ J m{-1} s{-1} K{-1} ]
+#      (sf_urban_physics=1,2,3)
+#
+
+AKSG: 1.0, 1.0, 1.0,
+#AKSG: 0.9, 0.8, 0.8,
+
+#
+# ALBR:   Surface albedo of roof [ fraction ]
+#      (sf_urban_physics=1,2,3)
+#
+
+ALBR: 1.0, 1.0, 1.0
+#ALBR: 0.88, 0.88, 0.88
+
+#
+# ALBB:  Surface albedo of building wall [ fraction ]
+#      (sf_urban_physics=1,2,3)
+#
+
+ALBB: 0.20, 0.20, 0.20
+
+#
+# ALBG:  Surface albedo of ground (road) [ fraction ]
+#      (sf_urban_physics=1,2,3)
+#
+
+ALBG: 0.17, 0.17, 0.17
+
+#
+# EPSR:  Surface emissivity of roof [ - ]
+#      (sf_urban_physics=1,2,3)
+#
+
+EPSR: 1.0, 1.0, 1.0
+
+#
+# EPSB:  Surface emissivity of building wall [-]
+#      (sf_urban_physics=1,2,3)
+#
+
+EPSB: 0.90, 0.90, 0.90
+
+#
+# EPSG:  Surface emissivity of ground (road) [ - ]
+#      (sf_urban_physics=1,2,3)
+#
+
+EPSG: 0.94, 0.94, 0.94
+
+#
+# Z0B:  Roughness length for momentum, over building wall [ m ]
+#       Only active for CH_SCHEME == 1
+#      (sf_urban_physics=1)
+#
+
+Z0B: 0.0001, 0.0001, 0.0001
+
+#
+# Z0G:  Roughness length for momentum, over ground (road) [ m ]
+#       Only active for CH_SCHEME == 1
+#      (sf_urban_physics=1,2,3)
+#
+
+#Z0G: 0.02, 0.02, 0.02
+Z0G: 0.005, 0.005, 0.005
+
+#
+# Z0R:  Roughness length for momentum over roof [ m ]
+#      (sf_urban_physics=2,3)
+#
+
+#Z0R: 0.05, 0.05, 0.05
+Z0R: 0.005, 0.005, 0.005
+
+#
+#  AKANDA_URBAN:  Coefficient modifying the Kanda approach to computing
+#  surface layer exchange coefficients.
+#      (sf_urban_physics=1)
+
+AKANDA_URBAN:  1.29 1.29 1.29
+
+#
+# COP:  Coefficient of performance of the A/C systems [ - ]
+#      (sf_urban_physics=3)
+#
+
+COP: 3.5, 3.5, 3.5
+
+#
+# PWIN:  Coverage area fraction of windows in the walls of the building [ - ]
+#      (sf_urban_physics=3)
+#
+
+PWIN: 0.2, 0.2, 0.2
+
+#
+# BETA:  Thermal efficiency of heat exchanger
+#      (sf_urban_physics=3)
+#
+
+BETA: 0.75, 0.75, 0.75
+
+#
+# SW_COND:  Air conditioning switch, 1=ON
+#      (sf_urban_physics=3)
+#
+
+SW_COND: 1, 1, 1
+
+#
+# TIME_ON:  Initial local time of A/C systems, [ h ]
+#      (sf_urban_physics=3)
+#
+
+TIME_ON: 0., 0., 0.
+
+#
+# TIME_OFF:  End local time of A/C systems, [ h ]
+#      (sf_urban_physics=3)
+#
+
+TIME_OFF: 24., 24., 24.
+
+#
+# TARGTEMP:  Target Temperature of the A/C systems, [ K ]
+#      (sf_urban_physics=3)
+#
+
+TARGTEMP: 298., 298., 298.
+
+#
+# GAPTEMP:  Comfort Range of the indoor Temperature, [ K ]
+#      (sf_urban_physics=3)
+#
+
+GAPTEMP: 0.5, 0.5, 0.5
+
+#
+# TARGHUM:  Target humidity of the A/C systems, [ Kg/Kg ]
+#      (sf_urban_physics=3)
+#
+
+TARGHUM: 0.005, 0.005, 0.005
+
+#
+# GAPHUM:  Comfort Range of the specific humidity, [ Kg/Kg ]
+#      (sf_urban_physics=3)
+#
+
+GAPHUM: 0.005, 0.005, 0.005
+
+#
+# PERFLO:  Peak number of occupants per unit floor area, [ person/m^2 ]
+#      (sf_urban_physics=3)
+#
+
+PERFLO: 0.02, 0.01, 0.01
+
+#
+# HSEQUIP:  Diurnal heating profile of heat generated by equipments
+#      (sf_urban_physics=3)
+#
+
+HSEQUIP: 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.5 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.25 0.25 0.25 0.25 0.25
+
+#
+# HSEQUIP_SCALE_FACTOR:  Peak heat generated by equipments, [ W/m^2 ]
+#      (sf_urban_physics=3)
+#
+
+HSEQUIP_SCALE_FACTOR: 36.00, 20.00, 16.00
+
+STREET PARAMETERS:
+#      (sf_urban_physics=2,3)
+
+#  urban      street      street     building
+# category  direction     width      width
+# [index]  [deg from N]    [m]        [m]
+
+# These values give the same H/W and lambdaP as the inputs used in SLCUM for 3HEAT:
+    1         0.0          5.1       7.7
+    1        90.0          5.1       7.7
+    2         0.0          15.0      14.
+    2        90.0          15.0      14.
+    3         0.0          39.3      8.3
+    3        90.0          39.3      8.3
+
+END STREET PARAMETERS
+
+BUILDING HEIGHTS: 1
+#      (sf_urban_physics=2,3)
+
+#     height   Percentage
+#      [m]       [%]
+#  values from Salamanca et al. 2015
+       5.0        50.0
+      10.0        30.0
+#      15.0         8.0 
+      20.0         8.0
+#      25.0         5.0
+      25.0         12.0
+END BUILDING HEIGHTS
+
+BUILDING HEIGHTS: 2
+#      (sf_urban_physics=2,3)
+
+#     height   Percentage
+#      [m]       [%]
+#  values from Salamanca et al. 2015
+       5.0        80.0
+      10.0        20.0
+#      15.0         0.0
+#      20.0         0.0
+#      25.0         0.0
+#      30.0         0.0
+END BUILDING HEIGHTS
+
+BUILDING HEIGHTS: 3
+#      (sf_urban_physics=2,3)
+
+#     height   Percentage
+#      [m]       [%]
+#  values from Salamanca et al. 2015
+       5.0        90.0
+      10.0        10.0
+#      15.0         0.0
+#      20.0         0.0
+#      25.0         0.0
+#      30.0         0.0
+END BUILDING HEIGHTS
+
+#
+# DDZR:  Thickness of each roof layer [ m ]
+#        This is currently NOT a function urban type, but a function
+#        of the number of layers.  Number of layers must be 4, for now.
+#      (sf_urban_physics=1)
+
+
+DDZR:  0.04, 0.02, 0.01, 0.005
+
+#
+# DDZB:  Thickness of each building wall layer [ m ]
+#        This is currently NOT a function urban type, but a function
+#        of the number of layers.  Number of layers must be 4, for now.
+#      (sf_urban_physics=1)
+#
+
+DDZB: 0.04, 0.04, 0.04, 0.04
+
+#
+# DDZG:  Thickness of each ground (road) layer [ m ]
+#        This is currently NOT a function urban type, but a function
+#        of the number of layers.  Number of layers must be 4, for now.
+#      (sf_urban_physics=1)
+#
+
+DDZG: 0.04, 0.12, 0.36, 1.08
+
+#
+# BOUNDR:  Lower boundary condition for roof layer temperature [ 1: Zero-Flux,  2: T = Constant ]
+#      (sf_urban_physics=1)
+#
+
+BOUNDR: 1
+
+#
+# BOUNDB:  Lower boundary condition for wall layer temperature [ 1: Zero-Flux,  2: T = Constant ]
+#      (sf_urban_physics=1)
+#
+
+BOUNDB: 1
+
+#
+# BOUNDG:  Lower boundary condition for ground (road) layer temperature [ 1: Zero-Flux,  2: T = Constant ]
+#      (sf_urban_physics=1)
+#
+
+BOUNDG: 1
+
+#
+# TRLEND:  Lower boundary condition for roof temperature [ K ]
+#      (sf_urban_physics=1,2,3)
+#
+
+TRLEND: 300.00, 300.00, 300.00
+
+#
+# TBLEND:  Lower boundary temperature for building wall temperature [ K ]
+#      (sf_urban_physics=1,2,3)
+#
+
+TBLEND: 300.00, 300.00, 300.00
+
+#
+# TGLEND:  Lower boundary temperature for ground (road) temperature [ K ]
+#      (sf_urban_physics=1,2,3)
+#
+
+TGLEND: 307.50, 307.50, 307.50
+
+#
+# Ch of Wall and Road [ 1: M-O Similarity Theory, 2: Empirical Form of Narita et al., 1997 (recommended) ]
+#      (sf_urban_physics=1)
+#
+
+CH_SCHEME: 2
+
+#
+# Surface and Layer Temperatures [ 1: 4-layer model,  2: Force-Restore method ]
+#      (sf_urban_physics=1)
+#
+
+TS_SCHEME: 1
+
+#
+# AHOPTION [ 0: No anthropogenic heating,  1: Anthropogenic heating will be added to sensible heat flux term ]
+#      (sf_urban_physics=1)
+#
+
+AHOPTION: 1
+
+#
+# Anthropogenic Heating diurnal profile.
+#   Multiplication factor applied to AH (as defined in the table above)
+#   Hourly values ( 24 of them ), starting at 01 hours Local Time.
+#   For sub-hourly model time steps, value changes on the hour and is
+#   held constant until the next hour.
+#      (sf_urban_physics=1)
+#
+#
+
+AHDIUPRF: 0.16 0.13 0.08 0.07 0.08 0.26 0.67 0.99 0.89 0.79 0.74 0.73 0.75 0.76 0.82 0.90 1.00 0.95 0.68 0.61 0.53 0.35 0.21 0.18
